@@ -1,0 +1,104 @@
+$mycolor : rgb(95, 223, 255);
+$bgcolour : #333;
+$number1 : 20px;
+$align1 :center;
+
+.navbar{
+            ul{
+                list-style-type: none;
+                margin: 0;
+                padding: 0;
+                overflow: hidden;
+                background-color: $bgcolour;
+            }
+            li{
+                float: right;
+                margin-right: $number1;
+            }
+            li a{
+                display: block;
+                color: white;
+                text-align: $align1;
+                padding: 14 px $number1;
+                text-decoration: none;
+            }
+            li a:hover{
+                background-color: $mycolor;
+            }
+        }
+.sidebar{
+    float:left;
+    height: auto;
+    width: 300px;
+    background-color: #f1f1f1;
+    
+    ul{
+        list-style-type: none;
+        padding: 0;
+        width: 200px;
+        text-align: center;
+        background-color: #f1f1f1;
+        margin: {
+            top: 20px;
+            bottom: 20px;
+            left: 0;
+            right: 0;
+        }
+    }
+    li{
+        a{
+            display: block;
+            color: #000;
+            padding: 10px 16px;
+            width: 250px;
+            text-decoration: none;
+        }
+    }
+    li{
+        a:hover{
+            background-color: #555;
+            color: white;
+        }
+    }
+    padding: {
+        top: 10px;
+        bottom: 300px;
+        }
+}
+@import "base";
+
+.content{
+    border-color: cornflowerblue;
+    color: black;
+}
+%shared-prop{
+    border: 1px solid #ccc;
+    padding: 10px;
+    color: #333;
+}
+
+%inheritance-eg{
+    font-size: medium;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    padding: 5px;
+    color: white;
+    border: 10px solid black;
+}
+
+.satu{
+    @extend %shared-prop;
+    margin-left: 330px;
+    background-color: chartreuse;
+}
+
+.dua{
+    @extend %inheritance-eg;
+    margin-left: 330px;
+    background-color: gold;
+}
+
+.tiga{
+    @extend %shared-prop;
+    margin-left: 330px;
+    background-color: red;
+}
